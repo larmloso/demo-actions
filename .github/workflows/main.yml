@@ -56,8 +56,8 @@ jobs:
         node-version: '10.x'
     - name: Install npm dependencies
       run: npm install
-    - name: Run build task
-      run: npm run build --if-present
+    # - name: Run build task
+    #   run: npm run build --if-present
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@main
       env:
@@ -67,4 +67,4 @@ jobs:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
-          EXCLUDE: "/dist/, /node_modules/"
+          # EXCLUDE: "/dist/, /node_modules/"
